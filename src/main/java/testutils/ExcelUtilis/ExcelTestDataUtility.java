@@ -61,10 +61,6 @@ public class ExcelTestDataUtility {
             //
             if (cell.getCellType().name().equals("STRING"))
                 return cell.getStringCellValue();
-
-                //
-                // if (cell.getCellType().STRING != null)
-                // return cell.getStringCellValue();
             else if ((cell.getCellType().name().equals("NUMERIC")) || (cell.getCellType().name().equals("FORMULA"))) {
 
                 String cellText = String.valueOf(cell.getNumericCellValue());
@@ -75,9 +71,6 @@ public class ExcelTestDataUtility {
                     Calendar cal = Calendar.getInstance();
                     cal.setTime(HSSFDateUtil.getJavaDate(d));
 
-                    //cellText = (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
-                    //cellText = cal.get(Calendar.MONTH) + 1 + "/" + cal.get(Calendar.DAY_OF_MONTH) + "/" + cellText;
-
                     cellText = (String.valueOf(cal.get(Calendar.YEAR)));
                     int month = cal.get(Calendar.MONTH) + 1;
                     int day = cal.get(Calendar.DAY_OF_MONTH);
@@ -85,7 +78,6 @@ public class ExcelTestDataUtility {
                     int minute = cal.get(Calendar.MINUTE);
                     cellText = (day<10?("0"+day):(day)) + "/" + (month<10?("0"+month):(month)) + "/" +  cellText + " " + (hour<10?("0"+hour):(hour)) + ":" + (minute<10?("0"+minute):(minute));
 
-                    // System.out.println(cellText);
                 }
 
                 return cellText;

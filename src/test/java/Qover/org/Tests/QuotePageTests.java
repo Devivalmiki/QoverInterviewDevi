@@ -17,8 +17,7 @@ public class QuotePageTests extends Base {
 
         @BeforeMethod(alwaysRun = true)
         public void testSetup() throws IOException, InterruptedException {
-            launchBrowserAndOpenUrl();
-            qp=new QuotePage();
+            qp = launchBrowserAndOpenUrl();
         }
 
         @Test(priority = 1)
@@ -29,10 +28,9 @@ public class QuotePageTests extends Base {
         }
 
         @Test(priority = 2)
-            public void validateQovertitle() throws Exception {
+            public void validateQovertitle() {
             GlobalStatic.assignTestCaseID("TC2");
             qp.validateQuotepage();
-            //throw new Exception(" i want to do it on purpose");
         }
 
         @Test(priority = 3,groups = {"Positive cases for Insured Value textbox"})
