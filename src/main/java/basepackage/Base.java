@@ -3,7 +3,6 @@ package basepackage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import resources.globalresources.GlobalStatic;
@@ -53,23 +52,31 @@ public class Base {
     }
 
     private void assignWebDriver(String nameOfTheBrowser){
-        if(nameOfTheBrowser.equals("chrome") || nameOfTheBrowser.equals("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:/Hybrid/Drivers/Chrome/chromedriver.exe");
-            GlobalStatic.driver = new ChromeDriver();
-        } else if (nameOfTheBrowser.equals("ff") || nameOfTheBrowser.equals("Firefox") || nameOfTheBrowser.equals("FF") || nameOfTheBrowser.equals("Mozilla Firefox"))
-        {
-            System.setProperty("webdriver.gecko.driver", "C:/Hybrid/Drivers/Firefox/geckodriver.exe");
+        switch (nameOfTheBrowser) {
+            case "chrome":
+            case "Chrome":
+                System.setProperty("webdriver.chrome.driver", "C:/Hybrid/Drivers/Chrome/chromedriver.exe");
+                GlobalStatic.driver = new ChromeDriver();
+                break;
+            case "ff":
+            case "Firefox":
+            case "FF":
+            case "Mozilla Firefox":
+                System.setProperty("webdriver.gecko.driver", "C:/Hybrid/Drivers/Firefox/geckodriver.exe");
 
-            GlobalStatic.driver = new FirefoxDriver();
-        }  else if (nameOfTheBrowser.equals("Safari")||nameOfTheBrowser.equals("SAFARI"))
-        {
-            System.setProperty("webdriver.safari.driver","");
-            GlobalStatic.driver = new SafariDriver();
-        }
-        else if (nameOfTheBrowser.equals("Edge")||nameOfTheBrowser.equals("edge")||nameOfTheBrowser.equals("Microsoft Edge"))
-        {
-            System.setProperty("webdriver.edge.driver","");
-            GlobalStatic.driver = new EdgeDriver();
+                GlobalStatic.driver = new FirefoxDriver();
+                break;
+            case "Safari":
+            case "SAFARI":
+                System.setProperty("webdriver.safari.driver", "");
+                GlobalStatic.driver = new SafariDriver();
+                break;
+            case "Edge":
+            case "edge":
+            case "Microsoft Edge":
+                System.setProperty("webdriver.edge.driver", "");
+                GlobalStatic.driver = new EdgeDriver();
+                break;
         }
 
     }

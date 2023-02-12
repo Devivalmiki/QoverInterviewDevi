@@ -108,9 +108,9 @@ public class QuotePageTests extends Base {
 
 
     private void validateResult(boolean hasError, boolean shouldHaveError){
-            if (hasError==true&shouldHaveError==false)
+            if (hasError & !shouldHaveError)
               Assert.fail("There should not be any error as data is valid");
-        if (hasError==false&shouldHaveError==true)
+        if (!hasError & shouldHaveError)
         Assert.fail("There should be error as data in invalid");
 
     }
