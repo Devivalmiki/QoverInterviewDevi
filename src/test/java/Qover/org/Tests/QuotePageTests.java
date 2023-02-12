@@ -35,7 +35,7 @@ public class QuotePageTests extends Base {
         }
 
         @Test(priority = 3,groups = {"Positive cases for Insured Value textbox"})
-        public void createQuotetest1() throws InterruptedException {
+        public void cityBikeMinValueTest() throws InterruptedException {
             GlobalStatic.assignTestCaseID("TC3");
             qp.createQuote(2);
             validateResult(qp.validaterrormessage(),false);
@@ -44,7 +44,7 @@ public class QuotePageTests extends Base {
         }
 
         @Test(priority = 4,groups = {"Positive cases for Insured Value textbox"})
-        public void createQuotetest2(){
+        public void electricCityTest(){
         GlobalStatic.assignTestCaseID("TC4");
         qp.createQuote(3);
         validateResult(qp.validaterrormessage(),false);
@@ -53,7 +53,7 @@ public class QuotePageTests extends Base {
     }
 
         @Test(priority = 5,groups = {"Positive cases for Insured Value textbox"})
-        public void createQuotetest3(){
+        public void racingBikeTest(){
         GlobalStatic.assignTestCaseID("TC5");
         qp.createQuote(4);
         validateResult(qp.validaterrormessage(),false);
@@ -62,7 +62,7 @@ public class QuotePageTests extends Base {
     }
 
         @Test(priority = 6,groups = {"Positive cases for Insured Value textbox"})
-        public void createQuotetest4(){
+        public void electricRacingBikeMaxValueTest(){
         GlobalStatic.assignTestCaseID("TC6");
         qp.createQuote(5);
         validateResult(qp.validaterrormessage(),false);
@@ -71,7 +71,7 @@ public class QuotePageTests extends Base {
     }
 
         @Test(priority = 7,groups = {"Positive cases for Insured Value textbox"})
-        public void createQuotetest5(){
+        public void mountainBikeTest(){
         GlobalStatic.assignTestCaseID("TC7");
         qp.createQuote(6);
         validateResult(qp.validaterrormessage(),false);
@@ -79,7 +79,7 @@ public class QuotePageTests extends Base {
         }
 
         @Test(priority = 8,groups = {"Positive cases for Insured Value textbox"})
-        public void createQuotetest6(){
+        public void electricMountainBikeTest(){
         GlobalStatic.assignTestCaseID("TC8");
         qp.createQuote(7);
         validateResult(qp.validaterrormessage(),false);
@@ -88,14 +88,14 @@ public class QuotePageTests extends Base {
         }
 
         @Test(priority = 9,groups = {"Negative cases for Insured Value textbox"})
-        public void createQuotetest7() {
+        public void cargoBikeInvalidLowerPriceTest() {
         GlobalStatic.assignTestCaseID("TC3");
         qp.createQuote(8);
         validateResult(qp.validaterrormessage(),true);
         }
 
         @Test(priority = 10,groups = {"Negative cases for Insured Value textbox"})
-        public void createQuotetest8() {
+        public void electricCargoBikeInvalidHigherPriceTest() {
         GlobalStatic.assignTestCaseID("TC3");
         qp.createQuote(9);
         validateResult(qp.validaterrormessage(),true);
