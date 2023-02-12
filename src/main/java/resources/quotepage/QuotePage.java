@@ -45,6 +45,7 @@ public class QuotePage {
     public void validateQuotepage() {
         qovermetitle.isDisplayed();
         yourquotefor.isDisplayed();
+        System.out.println(" I am on the right page");
     }
 
     public void createQuote(int rownum) {

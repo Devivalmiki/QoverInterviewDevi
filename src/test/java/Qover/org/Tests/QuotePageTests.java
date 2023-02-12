@@ -29,9 +29,10 @@ public class QuotePageTests extends Base {
         }
 
         @Test(priority = 2)
-            public void validateQovertitle(){
+            public void validateQovertitle() throws Exception {
             GlobalStatic.assignTestCaseID("TC2");
             qp.validateQuotepage();
+            //throw new Exception(" i want to do it on purpose");
         }
 
         @Test(priority = 3,groups = {"Positive cases for Insured Value textbox"})
