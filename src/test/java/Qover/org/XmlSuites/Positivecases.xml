@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/QoverInterviewDevi/src/test/java/Qover/org/XmlSuites">
+        <groups>
+            <run>
+                <include name="Positive cases for Insured Value textbox"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Qover.org.Tests.QuotePageTests"></class>
+        </classes>
+    </test>
+</suite>
